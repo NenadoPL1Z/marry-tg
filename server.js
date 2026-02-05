@@ -40,12 +40,14 @@ app.get('/', (req, res) => {
 
 app.post('/api/send-tg', async (req, res) => {
     try {
+        console.lgo("запрос получен: ", req.body)
         const message = sendTelegramNotification(req.body);
         const url = `https://api.telegram.org/bot${TG_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${message}&parse_mode=HTML`
         await axios.get(url);
-
+        console.log("успешно!")
         res.status(200).json({ success: true });
     } catch (error) {
+        console.error(error);
         res.status(500).json({ error: error.message });
     }
 });
