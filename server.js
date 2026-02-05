@@ -9,7 +9,7 @@ app.use(express.json());
 
 const PORT = 4000;
 const TG_TOKEN = "8599901880:AAFMVeToYa3267MNjqARUyLyUIolKPdCVMM";
-const CHAT_ID = "769116905";
+const CHAT_ID = "710003344";
 
 const sendTelegramNotification = (body) => {
     const { name, attendance, selectedDrinks } = body;
